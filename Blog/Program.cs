@@ -14,7 +14,8 @@ namespace Blog
         {
             var connection = new SqlConnection(CONNECTION_STRING);
             connection.Open();
-             ReadUsers();
+             ReadUsers(connection);
+             ReadRole(connection);
             // ReadUser();
             // CreateUser();
             // UpdateUser();
@@ -35,66 +36,78 @@ namespace Blog
 
         }
 
-        public static void ReadUser()
+         public static void ReadRole(SqlConnection connection)
         {
-            using(var connection = new SqlConnection(CONNECTION_STRING))
-            {
-                var users = connection.Get<User>(1);
-                Console.WriteLine(users.Name);
-            }
+            //Instanciando o Repositório
+            var repository = new RoleRepository(connection);
+            //Usando a função crada no repositório (GetAll)
+            var roles = repository.GetAll();
+            //Percorrendo a variavel USERS para imprimir 1 a 1 na tela
+            foreach(var role in roles)
+                Console.WriteLine(role.Name);
+
         }
 
-        public static void CreateUser()
-        {
-            var user = new User()
-            {
-                Bio = "Equipe Danilo Avelar",
-                Email = "Email2@email.com",
-                Image = "https://danilo.com.br",
-                Name = "Equipe Danilo Avelar",
-                PasswordHash = "q1w2e3r4",
-                Slug = "equipe-danilo"
-            };
+        // public static void ReadUser()
+        // {
+        //     using(var connection = new SqlConnection(CONNECTION_STRING))
+        //     {
+        //         var users = connection.Get<User>(1);
+        //         Console.WriteLine(users.Name);
+        //     }
+        // }
 
-            using(var connection = new SqlConnection(CONNECTION_STRING))
-            {
-                connection.Insert<User>(user);
-            }
-        }
+        // public static void CreateUser()
+        // {
+        //     var user = new User()
+        //     {
+        //         Bio = "Equipe Danilo Avelar",
+        //         Email = "Email2@email.com",
+        //         Image = "https://danilo.com.br",
+        //         Name = "Equipe Danilo Avelar",
+        //         PasswordHash = "q1w2e3r4",
+        //         Slug = "equipe-danilo"
+        //     };
 
-        public static void UpdateUser()
-        {
-             var user = new User()
-            {
-                Id = 2,
-                Bio = "Equipe | Danilo Avelar",
-                Email = "Email2@email.com",
-                Image = "https://danilo.com.br",
-                Name = "Equipe de Dev - Danilo Avelar",
-                PasswordHash = "q1w2e3r4",
-                Slug = "equipe-danilo"
-            };
+        //     using(var connection = new SqlConnection(CONNECTION_STRING))
+        //     {
+        //         connection.Insert<User>(user);
+        //     }
+        // }
 
-            using(var connection = new SqlConnection(CONNECTION_STRING))
-            {
-                connection.Update<User>(user);
-            }
-        }
+        // public static void UpdateUser()
+        // {
+        //      var user = new User()
+        //     {
+        //         Id = 2,
+        //         Bio = "Equipe | Danilo Avelar",
+        //         Email = "Email2@email.com",
+        //         Image = "https://danilo.com.br",
+        //         Name = "Equipe de Dev - Danilo Avelar",
+        //         PasswordHash = "q1w2e3r4",
+        //         Slug = "equipe-danilo"
+        //     };
 
-        public static void DeleteUser()
-        {
-            // var use = new User()
-            // {
-            //     Id = 2,
-            // };
+        //     using(var connection = new SqlConnection(CONNECTION_STRING))
+        //     {
+        //         connection.Update<User>(user);
+        //     }
+        // }
 
-            using(var connection = new SqlConnection(CONNECTION_STRING))
-            {
-                var user = connection.Get<User>(3);
-                connection.Delete<User>(user);
-                Console.WriteLine("Exclusão realizada com sucesso");
-            };
+        // public static void DeleteUser()
+        // {
+        //     // var use = new User()
+        //     // {
+        //     //     Id = 2,
+        //     // };
 
-        }
+        //     using(var connection = new SqlConnection(CONNECTION_STRING))
+        //     {
+        //         var user = connection.Get<User>(3);
+        //         connection.Delete<User>(user);
+        //         Console.WriteLine("Exclusão realizada com sucesso");
+        //     };
+
+        // }
     }
 }
