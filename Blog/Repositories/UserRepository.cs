@@ -26,7 +26,31 @@ namespace Blog.Repositories
         //Metodo CreateUser recebe o objeto USER para ser persistido no BD
         //Metodo é VOID pois nao precisa retornar nada
         public void CreateUser(User user)
-            => _connection.Insert<User>(user); // Utilizando a ExpressionBody ( => ), retirando as chaves quando só temos 1 linha de RETORNO
-        
+        {
+            user.ID = 0; // Se tentar criar um usuario diferente de 0 ele seta 0 para o fulano
+            _connection.Insert<User>(user);
+        }        
+
+        public void Update(User user)
+        {
+            if(user.id != 0) //Se o usuario for diferente de 0, faz o Update
+            _connection.Update<User>(user);
+        }
+
+        public void Delete(user user)
+        {
+            if(user.id != 0) //Se o usuario for diferente de 0, faz o Delete
+            _connection.Delete<User>(user);
+        }
+
+        public void Delete(int Id) 
+        {
+            if(id != 0)
+            {
+                var user = _connection.Get<User>(id);
+                _connection.Delete<User>(user);
+            }
+        }
+
     }
 }
