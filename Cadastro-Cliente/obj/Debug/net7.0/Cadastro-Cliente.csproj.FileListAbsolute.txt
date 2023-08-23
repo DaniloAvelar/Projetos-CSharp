@@ -1,0 +1,15 @@
+C:\Dev\Projetos-CSharp\Cadastro-Cliente\bin\Debug\net7.0\Cadastro-Cliente.exe
+C:\Dev\Projetos-CSharp\Cadastro-Cliente\bin\Debug\net7.0\Cadastro-Cliente.deps.json
+C:\Dev\Projetos-CSharp\Cadastro-Cliente\bin\Debug\net7.0\Cadastro-Cliente.runtimeconfig.json
+C:\Dev\Projetos-CSharp\Cadastro-Cliente\bin\Debug\net7.0\Cadastro-Cliente.dll
+C:\Dev\Projetos-CSharp\Cadastro-Cliente\bin\Debug\net7.0\Cadastro-Cliente.pdb
+C:\Dev\Projetos-CSharp\Cadastro-Cliente\obj\Debug\net7.0\Cadastro-Cliente.csproj.AssemblyReference.cache
+C:\Dev\Projetos-CSharp\Cadastro-Cliente\obj\Debug\net7.0\Cadastro-Cliente.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev\Projetos-CSharp\Cadastro-Cliente\obj\Debug\net7.0\Cadastro-Cliente.AssemblyInfoInputs.cache
+C:\Dev\Projetos-CSharp\Cadastro-Cliente\obj\Debug\net7.0\Cadastro-Cliente.AssemblyInfo.cs
+C:\Dev\Projetos-CSharp\Cadastro-Cliente\obj\Debug\net7.0\Cadastro-Cliente.csproj.CoreCompileInputs.cache
+C:\Dev\Projetos-CSharp\Cadastro-Cliente\obj\Debug\net7.0\Cadastro-Cliente.dll
+C:\Dev\Projetos-CSharp\Cadastro-Cliente\obj\Debug\net7.0\refint\Cadastro-Cliente.dll
+C:\Dev\Projetos-CSharp\Cadastro-Cliente\obj\Debug\net7.0\Cadastro-Cliente.pdb
+C:\Dev\Projetos-CSharp\Cadastro-Cliente\obj\Debug\net7.0\Cadastro-Cliente.genruntimeconfig.cache
+C:\Dev\Projetos-CSharp\Cadastro-Cliente\obj\Debug\net7.0\ref\Cadastro-Cliente.dll
