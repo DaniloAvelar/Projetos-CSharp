@@ -27,5 +27,26 @@ namespace Blog.Repositories
         //Metodo é VOID pois nao precisa retornar nada
         public void CreateUser(Role role)
             => _connection.Insert<Role>(role); // Utilizando a ExpressionBody ( => ), retirando as chaves quando só temos 1 linha de RETORNO
+
+        public void Update(Role role)
+        {
+            if(role.id != 0) //Se o usuario for diferente de 0, faz o Update
+            _connection.Update<Role>(useroler);
+        }
+
+        public void Delete(Role role)
+        {
+            if(role.id != 0) //Se o usuario for diferente de 0, faz o Delete
+            _connection.Delete<Role>(role);
+        }
+
+        public void Delete(int Id) 
+        {
+            if(id != 0)
+            {
+                var role = _connection.Get<Role>(id);
+                _connection.Delete<Role>(role);
+            }
+        }
     }
 }
